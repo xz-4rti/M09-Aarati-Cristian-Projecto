@@ -1,0 +1,468 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  min-height: 100vh;
+  background: #27577a;
+  flex-direction: column;
+  background-image: url("https://wallpaperaccess.com/full/11369818.jpg");
+  background-size: cover;
+  color: #fff;
+}
+
+li {
+  list-style: none;
+}
+
+body,
+.container,
+.video-controls,
+.video-timer,
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#header {
+  font-size: 20px;
+  margin-top: 47px;
+}
+
+#header h1 {
+  font-size: 2em;
+  font-weight: 600;
+  color: #fff;
+}
+
+.navigation {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.container-navigation {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.li-tab {
+  padding: 10px;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: #fff;
+  transition: background 0.3s;
+}
+
+.li-tab:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+.fa-x,
+.fa-bars {
+  position: fixed;
+  left: 109px !important;
+  top: 42px;
+  cursor: pointer;
+  font-size: 4em;
+  z-index: 1001;
+}
+
+.fa-x {
+  display: none !important;
+}
+
+
+#xIcon[style*="display: block"] {
+  display: block !important;
+}
+
+.li-tab > a > i {
+  padding: 10px;
+  font-size: 3.4em;
+  cursor: pointer;
+  filter: drop-shadow(2px 4px 6px black);
+  color: #df2929;
+}
+
+.container-navigation {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.navigation {
+  position: absolute;
+  left: 61px;
+  top: 149px;
+}
+
+.icon-see {
+  display: block !important;
+}
+
+.navigation-see {
+  display: inline-block;
+}
+
+.container {
+  width: 98%;
+  user-select: none;
+  overflow: hidden;
+  max-width: 900px;
+  border-radius: 5px;
+  background: #000;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.container.fullscreen {
+  max-width: 100%;
+  width: 100%;
+  height: 100vh;
+  border-radius: 0px;
+}
+.wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  opacity: 0;
+  bottom: -15px;
+  transition: all 0.08s ease;
+}
+.container.show-controls .wrapper {
+  opacity: 1;
+  bottom: 0;
+  transition: all 0.13s ease;
+}
+.wrapper::before {
+  content: "";
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: calc(100% + 35px);
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+.video-timeline {
+  height: 7px;
+  width: 100%;
+  cursor: pointer;
+}
+.video-timeline .progress-area {
+  height: 3px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.6);
+}
+.progress-area span {
+  position: absolute;
+  left: 50%;
+  top: -25px;
+  font-size: 13px;
+  color: #fff;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+.progress-area .progress-bar {
+  width: 0%;
+  height: 100%;
+  position: relative;
+  background: #2289ff;
+}
+.progress-bar::before {
+  content: "";
+  right: 0;
+  top: 50%;
+  height: 13px;
+  width: 13px;
+  position: absolute;
+  border-radius: 50%;
+  background: #2289ff;
+  transform: translateY(-50%);
+}
+.progress-bar::before,
+.progress-area span {
+  display: none;
+}
+.video-timeline:hover .progress-bar::before,
+.video-timeline:hover .progress-area span {
+  display: block;
+}
+.wrapper .video-controls {
+  padding: 5px 20px 10px;
+}
+.video-controls .options {
+  width: 100%;
+}
+.video-controls .options:first-child {
+  justify-content: flex-start;
+}
+.video-controls .options:last-child {
+  justify-content: flex-end;
+}
+.options button {
+  height: 40px;
+  width: 40px;
+  font-size: 19px;
+  border: none;
+  cursor: pointer;
+  background: none;
+  color: #efefef;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+.options button :where(i, span) {
+  height: 100%;
+  width: 100%;
+  line-height: 40px;
+}
+.options button:hover :where(i, span) {
+  color: #fff;
+}
+.options button:active :where(i, span) {
+  transform: scale(0.9);
+}
+.options button span {
+  font-size: 23px;
+}
+.options input {
+  height: 4px;
+  margin-left: 3px;
+  max-width: 75px;
+  accent-color: #0078ff;
+}
+.options .video-timer {
+  color: #efefef;
+  margin-left: 15px;
+  font-size: 14px;
+}
+.video-timer .separator {
+  margin: 0 5px;
+  font-size: 16px;
+  font-family: "Open sans";
+}
+.playback-content {
+  display: flex;
+  position: relative;
+}
+.playback-content .speed-options {
+  position: absolute;
+  list-style: none;
+  left: -40px;
+  bottom: 40px;
+  width: 95px;
+  overflow: hidden;
+  opacity: 0;
+  border-radius: 4px;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.13s ease;
+}
+.playback-content .speed-options.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.speed-options li {
+  cursor: pointer;
+  color: #000;
+  font-size: 14px;
+  margin: 2px 0;
+  padding: 5px 0 5px 15px;
+  transition: all 0.1s ease;
+}
+.speed-options li:where(:first-child, :last-child) {
+  margin: 0px;
+}
+.speed-options li:hover {
+  background: #dfdfdf;
+}
+.speed-options li.active {
+  color: #fff;
+  background: #3e97fd;
+}
+.container video {
+  width: 100%;
+}
+
+.info-about {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon-creator {
+  font-size: 65px;
+  position: relative;
+  z-index: 999;
+  color: white;
+  transition: all 0.3sease;
+}
+
+
+#info-creators {
+  text-align: center;
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 71%);
+}
+
+#article-about img {
+  width: 400px;
+  border-radius: 58%;
+  height: 391px;
+  margin-block: 30px;
+}
+
+#article-about {
+  height: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-tooltip {
+  position: absolute;
+  z-index: 9999;
+  background: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  animation: fadeIn 0.2s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .wrapper .video-controls {
+    padding: 3px 10px 7px;
+  }
+  .options input,
+  .progress-area span {
+    display: none !important;
+  }
+  .options button {
+    height: 30px;
+    width: 30px;
+    font-size: 17px;
+  }
+  .options .video-timer {
+    margin-left: 5px;
+  }
+  .video-timer .separator {
+    font-size: 14px;
+    margin: 0 2px;
+  }
+  .options button :where(i, span) {
+    line-height: 30px;
+  }
+  .options button span {
+    font-size: 21px;
+  }
+  .options .video-timer,
+  .progress-area span,
+  .speed-options li {
+    font-size: 12px;
+  }
+  .playback-content .speed-options {
+    width: 75px;
+    left: -30px;
+    bottom: 30px;
+  }
+  .speed-options li {
+    margin: 1px 0;
+    padding: 3px 0 3px 10px;
+  }
+  .right .pic-in-pic {
+    display: none;
+  }
+}
+
+#credits {
+  margin-top: 82px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 20px 0;
+  backdrop-filter: blur(5px);
+  border-top: 2px solid #df2929;
+  box-shadow: 0 -5px 15px rgba(223, 41, 41, 0.3);
+}
+
+#credits .footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+#credits .game-info {
+  text-align: center;
+}
+
+#credits h3 {
+  color: #fff;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(223, 41, 41, 0.8);
+}
+
+#credits .social-links {
+  display: flex;
+  gap: 20px;
+}
+
+#credits .social-links a {
+  color: #fff;
+  font-size: 1.5em;
+  transition: all 0.3s ease;
+}
+
+#credits .social-links a:hover, .icon-creator:hover {
+  color: #df2929;
+  transform: translateY(-3px);
+}
+
+#credits .footer-stats {
+  display: flex;
+  gap: 30px;
+  color: #888;
+  font-size: 0.9em;
+}
+
+#credits .stat {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#credits .stat i {
+  color: #df2929;
+}

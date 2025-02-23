@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 185vh;
+  background: #27577a;
+  flex-direction: column;
+  background-image: url("https://wallpaperaccess.com/full/11369818.jpg");
+  background-size: cover;
+  color: #fff;
+}
+
+li {
+  list-style: none;
+}
+
+body,
+.container,
+.video-controls,
+.video-timer,
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#header {
+  font-size: 20px;
+}
+
+#header h1 {
+  font-size: 2em;
+  font-weight: 600;
+  color: #fff;
+}
+
+.fa-x,
+.fa-bars {
+  position: relative;
+  left: -7em !important;
+  font-size: 3em;
+}
+
+.fa-x {
+  display: none !important;
+  left: -9.8em;
+}
+
+.navigation {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.container-navigation {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.li-tab {
+  padding: 10px;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: #fff;
+  transition: background 0.3s;
+}
+
+.li-tab:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+#technical-details {
+  width: 90%;
+  max-width: 1000px;
+  margin-top: 40px;
+  text-align: left; 
+}
+
+
+.effect {
+  background: rgba(0, 0, 0, 0.436);
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.effect:hover {
+  transform: scale(1.03);
+  background: rgba(4, 4, 4, 0.312);
+}
+
+.effect h3 {
+  font-size: 1.8em;
+  margin-bottom: 20px; 
+  color: #ffffff;
+  text-align: center; 
+}
+
+.effect p {
+  font-size: 1.1em;
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+  color: #ddd;
+  text-align: justify; 
+  text-justify: inter-word; 
+}
+
+.effect ul {
+  font-size: 1.1em;
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+  color: #ddd;
+  text-align: left; 
+  padding-left: 20px; 
+}
+
+.effect ul li {
+  margin-bottom: 15px; 
+}
+
+.effect img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  display: block; 
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+.effect img:hover {
+  transform: scale(1.05);
+}
