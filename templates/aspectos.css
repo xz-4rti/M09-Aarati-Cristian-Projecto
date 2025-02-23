@@ -35,9 +35,12 @@ body,
 }
 
 #header h1 {
-  font-size: 2em;
+  font-size: 2.8em;
   font-weight: 600;
   color: #fff;
+  font-family: "Dangrek", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .fa-x,
@@ -104,10 +107,13 @@ body,
 }
 
 .effect h3 {
-  font-size: 1.8em;
+  font-size: 1.9em;
   margin-bottom: 20px; 
   color: #ffffff;
   text-align: center; 
+  font-family: "Dangrek", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .effect p {

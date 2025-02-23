@@ -1,9 +1,9 @@
 document
   .getElementById("downloadButton")
   .addEventListener("click", function () {
-    // the path to your .kdenlive file
-    const fileUrl = "path/to/your/file.kdenlive";
-    const fileName = "project.kdenlive";
+
+    const fileUrl = "";
+    const fileName = "lethalcompany.kdenlive";
 
     // Create a temporary link element
     const link = document.createElement("a");
